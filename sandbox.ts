@@ -1,15 +1,19 @@
-const character = 'kharioki';
+// explicit types
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
 
-console.log(character);
+// arrays
+let avengers: string[] = [];
 
-const inputs = document.querySelectorAll('input');
+avengers.push('Captain America');
 
-console.log(inputs);
+// union types
+let mixed: (string | number | boolean)[] = [];
 
-inputs.forEach(input => {
-  console.log({ input });
-});
+mixed.push('hello');
+mixed.push(20);
+mixed.push(false);
+console.log(mixed);
 
-const circ = (diameter: number) => diameter * Math.PI;
-
-console.log(circ(7.9));
+// objects
