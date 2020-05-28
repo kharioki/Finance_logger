@@ -32,3 +32,9 @@ console.log(userAge);
 var hero;
 hero = { name: 'kharioki', home: 'westlands' };
 console.log(hero);
+// Functions
+var greet;
+// then
+greet = function () { return console.log('Waaaaassssuuuppp!!!'); };
+var add = function (a, b, c) { return console.log(a + b); };
+add(5, 10);

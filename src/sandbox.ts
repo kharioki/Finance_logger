@@ -44,3 +44,13 @@ console.log(userAge);
 let hero: { name: any; home: any };
 hero = { name: 'kharioki', home: 'westlands' };
 console.log(hero);
+
+// Functions
+let greet: Function;
+
+// then
+greet = () => console.log('Waaaaassssuuuppp!!!');
+
+const add = (a: number, b: number, c?: number | string) => console.log(a + b);
+
+add(5, 10);
