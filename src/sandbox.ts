@@ -51,6 +51,32 @@ let greet: Function;
 // then
 greet = () => console.log('Waaaaassssuuuppp!!!');
 
-const add = (a: number, b: number, c?: number | string) => console.log(a + b);
+const add = (a: number, b: number, c?: number | string): void =>
+  console.log(a + b);
 
 add(5, 10);
+
+// Using Aliases
+// aliases
+type StringOrNum = string | number;
+type objWithName = { name: string; uid: StringOrNum };
+
+// using the alias
+const deets = (uid: StringOrNum, item: string) =>
+  console.log(`${item} has a uid of ${uid}`);
+
+const sayHi = (user: objWithName) => console.log(`${user.name} says hello`);
+
+// Function signatures
+let holla: (a: string, b: string) => void;
+let calc: (a: number, b: number, c: string) => number;
+
+// using signatures
+holla = (name: string, msg: string) => console.log(`${name} says ${msg}`);
+calc = (num1: number, num2: number, action: string) => {
+  if (action === 'add') {
+    return num1 + num2;
+  } else {
+    return num1 - num2;
+  }
+};
