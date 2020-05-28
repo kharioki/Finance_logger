@@ -20,3 +20,14 @@ firstAvenger = { name: 'Steve Rogers', alias: 'Captain America', age: 102 };
 firstAvenger = [];
 // we can define object properties types
 var secondAvenger;
+// Dynamic types
+var userAge = 25;
+// this could also work
+userAge = true;
+console.log(userAge);
+// this too
+userAge = 'Kiki';
+console.log(userAge);
+var hero;
+hero = { name: 'kharioki', home: 'westlands' };
+console.log(hero);

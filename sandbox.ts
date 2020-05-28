@@ -30,3 +30,17 @@ let secondAvenger: {
   alias: string;
   age: number;
 };
+
+// Dynamic types
+let userAge: any = 25;
+
+// this could also work
+userAge = true;
+console.log(userAge);
+// this too
+userAge = 'Kiki';
+console.log(userAge);
+
+let hero: { name: any; home: any };
+hero = { name: 'kharioki', home: 'westlands' };
+console.log(hero);
