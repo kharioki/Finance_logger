@@ -18,8 +18,12 @@ class Invoice {
 const invOne = new Invoice('kharioki', 'build a tesseract', 450);
 const invTwo = new Invoice('june', 'build a sceptre', 250);
 
-console.log(invOne);
-console.log(invTwo);
+let invoices: Invoice[] = [];
+
+invoices.push(invOne);
+invoices.push(invTwo);
+
+console.log(invoices);
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 

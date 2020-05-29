@@ -14,8 +14,10 @@ var Invoice = /** @class */ (function () {
 // create invoice
 var invOne = new Invoice('kharioki', 'build a tesseract', 450);
 var invTwo = new Invoice('june', 'build a sceptre', 250);
-console.log(invOne);
-console.log(invTwo);
+var invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+console.log(invoices);
 var form = document.querySelector('.new-item-form');
 // inputs
 var type = document.querySelector('#type');
