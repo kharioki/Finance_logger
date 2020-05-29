@@ -44,4 +44,34 @@ const addUID = <T extends object>(obj: T) => {
 
 let docOne = addUID({ name: 'kharioki', age: 28 });
 
-console.log(docOne.name);
+// console.log(docOne.name);
+
+// ENUMS
+enum ResourceType {
+  BOOK,
+  AUTHOR,
+  FILM,
+  DIRECTOR,
+  PERSON
+}
+
+interface Resource<T> {
+  uid: number;
+  resourceType: ResourceType;
+  data: T;
+}
+
+const docTwo: Resource<object> = {
+  uid: 1,
+  resourceType: ResourceType.BOOK,
+  data: { title: 'Start up nation' }
+};
+
+const docThree: Resource<object> = {
+  uid: 2,
+  resourceType: ResourceType.DIRECTOR,
+  data: { title: 'kharioki' }
+};
+
+console.log(docTwo);
+console.log(docThree);
