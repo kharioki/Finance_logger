@@ -1,3 +1,18 @@
+const me = {
+    name: 'Tony',
+    age: 28,
+    speak(msg) {
+        console.log(msg);
+    },
+    spend(amount) {
+        console.log('I spent ', amount);
+        return amount;
+    }
+};
+const greetPerson = (person) => {
+    console.log('Holla ', person.name);
+};
+greetPerson(me);
 import { Invoice } from './classes/Invoice.js';
 // create invoice
 const invOne = new Invoice('kharioki', 'build a tesseract', 450);
