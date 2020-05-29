@@ -35,3 +35,13 @@ form.addEventListener('submit', (e: Event) => {
   // render document created
   list.render(doc, type.value, 'end');
 });
+
+// Generics
+const addUID = <T extends object>(obj: T) => {
+  let uid = Math.floor(Math.random() * 100);
+  return { ...obj, uid };
+};
+
+let docOne = addUID({ name: 'kharioki', age: 28 });
+
+console.log(docOne.name);
