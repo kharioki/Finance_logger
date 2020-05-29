@@ -1,28 +1,23 @@
-const me = {
-    name: 'Tony',
-    age: 28,
-    speak(msg) {
-        console.log(msg);
-    },
-    spend(amount) {
-        console.log('I spent ', amount);
-        return amount;
-    }
-};
-const greetPerson = (person) => {
-    console.log('Holla ', person.name);
-};
-greetPerson(me);
+// classes
 import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+// let docOne: HasFormatter;
+// let docTwo: HasFormatter;
+// docOne = new Invoice('tess', 'plumbing work', 400);
+// docTwo = new Payment('ken', 'making breakfast', 500);
+// let docs: HasFormatter[] = [];
+// docs.push(docOne);
+// docs.push(docTwo);
+// console.log(docs);
 // create invoice
-const invOne = new Invoice('kharioki', 'build a tesseract', 450);
-const invTwo = new Invoice('june', 'build a sceptre', 250);
-let invoices = [];
-invoices.push(invOne);
-invoices.push(invTwo);
-invoices.forEach(inv => {
-    console.log(inv.client, inv.amount, inv.format());
-});
+// const invOne = new Invoice('kharioki', 'build a tesseract', 450);
+// const invTwo = new Invoice('june', 'build a sceptre', 250);
+// let invoices: Invoice[] = [];
+// invoices.push(invOne);
+// invoices.push(invTwo);
+// invoices.forEach(inv => {
+//   console.log(inv.client, inv.amount, inv.format());
+// });
 // input form
 const form = document.querySelector('.new-item-form');
 // inputs
@@ -32,5 +27,14 @@ const details = document.querySelector('#details');
 const amount = document.querySelector('#amount');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(type.value, toFrom.value, details.value, amount.valueAsNumber);
+    let doc;
+    if (type.value === 'invoice') {
+        // create a new invoice
+        doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    }
+    else {
+        // create a new payment
+        doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+    }
+    console.log(doc);
 });
