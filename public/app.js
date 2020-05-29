@@ -1,12 +1,22 @@
 "use strict";
-var anchor = document.querySelector('a');
-// console.log(anchor.href);
-// if (anchor) {
-//   console.log(anchor.href);
-// }
-// const form = document.querySelector('form')!;
+// classes
+var Invoice = /** @class */ (function () {
+    function Invoice(c, d, a) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+    Invoice.prototype.format = function () {
+        return this.client + " owes \u00A3" + this.amount + " for " + this.details;
+    };
+    return Invoice;
+}());
+// create invoice
+var invOne = new Invoice('kharioki', 'build a tesseract', 450);
+var invTwo = new Invoice('june', 'build a sceptre', 250);
+console.log(invOne);
+console.log(invTwo);
 var form = document.querySelector('.new-item-form');
-// console.log(form.children);
 // inputs
 var type = document.querySelector('#type');
 var toFrom = document.querySelector('#toFrom');

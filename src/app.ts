@@ -1,15 +1,27 @@
-const anchor = document.querySelector('a')!;
+// classes
+class Invoice {
+  client: string;
+  details: string;
+  amount: number;
 
-// console.log(anchor.href);
+  constructor(c: string, d: string, a: number) {
+    this.client = c;
+    this.details = d;
+    this.amount = a;
+  }
 
-// if (anchor) {
-//   console.log(anchor.href);
-// }
+  format() {
+    return `${this.client} owes £${this.amount} for ${this.details}`;
+  }
+}
+// create invoice
+const invOne = new Invoice('kharioki', 'build a tesseract', 450);
+const invTwo = new Invoice('june', 'build a sceptre', 250);
 
-// const form = document.querySelector('form')!;
+console.log(invOne);
+console.log(invTwo);
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
-// console.log(form.children);
 
 // inputs
 const type = document.querySelector('#type') as HTMLSelectElement;
