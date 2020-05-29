@@ -22,56 +22,19 @@ const list = new ListTemplate(ul);
 form.addEventListener('submit', (e: Event) => {
   e.preventDefault();
 
-  let doc: HasFormatter;
+  // values tuple
+  let values: [string, string, number];
+  values = [toFrom.value, details.value, amount.valueAsNumber];
 
+  let doc: HasFormatter;
   if (type.value === 'invoice') {
     // create a new invoice
-    doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    doc = new Invoice(...values);
   } else {
     // create a new payment
-    doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+    doc = new Payment(...values);
   }
 
   // render document created
   list.render(doc, type.value, 'end');
 });
-
-// Generics
-const addUID = <T extends object>(obj: T) => {
-  let uid = Math.floor(Math.random() * 100);
-  return { ...obj, uid };
-};
-
-let docOne = addUID({ name: 'kharioki', age: 28 });
-
-// console.log(docOne.name);
-
-// ENUMS
-enum ResourceType {
-  BOOK,
-  AUTHOR,
-  FILM,
-  DIRECTOR,
-  PERSON
-}
-
-interface Resource<T> {
-  uid: number;
-  resourceType: ResourceType;
-  data: T;
-}
-
-const docTwo: Resource<object> = {
-  uid: 1,
-  resourceType: ResourceType.BOOK,
-  data: { title: 'Start up nation' }
-};
-
-const docThree: Resource<object> = {
-  uid: 2,
-  resourceType: ResourceType.DIRECTOR,
-  data: { title: 'kharioki' }
-};
-
-console.log(docTwo);
-console.log(docThree);

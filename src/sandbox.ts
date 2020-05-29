@@ -80,3 +80,49 @@ calc = (num1: number, num2: number, action: string) => {
     return num1 - num2;
   }
 };
+
+// Generics
+const addUID = <T extends object>(obj: T) => {
+  let uid = Math.floor(Math.random() * 100);
+  return { ...obj, uid };
+};
+
+let docOne = addUID({ name: 'kharioki', age: 28 });
+
+// console.log(docOne.name);
+
+// ENUMS
+enum ResourceType {
+  BOOK,
+  AUTHOR,
+  FILM,
+  DIRECTOR,
+  PERSON
+}
+
+interface Resource<T> {
+  uid: number;
+  resourceType: ResourceType;
+  data: T;
+}
+
+const docTwo: Resource<object> = {
+  uid: 1,
+  resourceType: ResourceType.BOOK,
+  data: { title: 'Start up nation' }
+};
+
+const docThree: Resource<object> = {
+  uid: 2,
+  resourceType: ResourceType.DIRECTOR,
+  data: { title: 'kharioki' }
+};
+
+console.log(docTwo);
+console.log(docThree);
+
+// tuples
+
+let arr = ['kiki', 28, true];
+
+let tup: [string, number, boolean] = ['bunnie', 25, true];
