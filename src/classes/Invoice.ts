@@ -1,5 +1,5 @@
 // import interface
-import { HasFormatter } from '../interfaces/HasFormatter';
+import { HasFormatter } from '../interfaces/HasFormatter.js';
 
 // class
 export class Invoice implements HasFormatter {
